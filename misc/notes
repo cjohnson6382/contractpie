@@ -1,0 +1,26 @@
+//  site will have two main panels; a pie chart and a breakdown of each section of the pie chart below
+//    if you click on a section of the pie chart, it'll take you down to the explanation section below
+//    the explanation section will be organized by funds recipient
+//      if you click on any given recipient, it will expand a list of all that recipient's contracts, organized by date
+
+//  there will be a second pie chart that organizes data by date
+//    the pie chart will be broken down by year
+//    clicking on a year will take you to a detailed view of that year, with the total awarded during that year
+//      below, contracts will be broken down by date
+
+
+//  html
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+</body>
+
+//  https://modernizr.com/
+//  check for localstoage on first use so that we can create a local database of the pie chart data
+if (Modernizr.localstorage) {
+  // window.localStorage is available!
+} else {
+  // no native support for HTML5 storage :(
+  // maybe try dojox.storage or a third-party solution
+}

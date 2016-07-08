@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Google Chart App</title>
+</head>
+<body ng-app="contractPie">
+
+  <div ng-controller="PieCtrl as pieCtrl">
+    <div pie-chart-widget
+         chart-data="pieCtrl.dateChartData"
+         chart-config="pieCtrl.dateChartConfig">
+    </div>
+    <div pie-chart-widget
+      chart-data="pieCtrl.agencyChartData"
+      chart-config="pieCtrl.agencyChartConfig">
+    </div>
+  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+  
+  <div ng-controller="DetailCtrl as detailCtrl">
+    <div ng-repeat="contractDetail in detailCtrl.detailedViewsArray">
+      <div detail-widget
+        detail-data="contractDetail">
+        <div>contractDetail[0]</div>
+        <div ng-repeat="contact in contractDetail[1]">
+          <div>
+            <span>
+              contract.agency
+            </span>
+            <span>
+              contract.totalcontractamt
+            </span>
+          </div>
+          <div>
+              Begin: contract.begindate
+              End: contract.enddate
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://www.google.com/jsapi"></script>
+  <script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="googleChartLoader.js"></script>
+  <script src="pieChart.js"></script>
+</body>
+</html>
